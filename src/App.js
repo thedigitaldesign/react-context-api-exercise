@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, createContext } from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Styles
+import './App.css'
+
+// Packages
+import { BrowserRouter } from 'react-router-dom'
+
+// Components
+import AppRoutes from './utils/Routes/Routes'
+import Layout from './views/_Shared/Layout'
+
+const Context = createContext()
+
+class GlobalProvider extends Component {
+  state = {
+    id: '',
+    name: '',
+    email: '',
+    position: '',
+    photo: '',
+  }
+
+  render() {
+    const provider = {
+      state: this.state,
+      handleAvatarClick: () => this.setState({}),
+    }
+
+    return (
+      <Context.Provider value={this.state}>
+        {this.props.children}
+      </Context.Provider>
+    )
+  }
 }
 
-export default App;
+export default class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <GlobalProvider>
+          <Layout>
+            <AppRoutes />
+          </Layout>
+        </GlobalProvider>
+      </BrowserRouter>
+    )
+  }
+}
