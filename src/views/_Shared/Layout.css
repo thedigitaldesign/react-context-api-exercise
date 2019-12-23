@@ -1,0 +1,90 @@
+/* Generic */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 1rem 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Mobile */
+.header {
+  background-color: #313131;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding: 5px 10px;
+}
+
+.app {
+  width: 95%;
+  margin: 40px auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1 100%;
+}
+
+.column .column {
+  flex: 1;
+}
+
+.mobile-padding-x-30 {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+/* Desktop Override */
+@media screen and (min-width: 700px) {
+  h1,
+  h2,
+  h3 {
+    text-align: left;
+  }
+
+  .app {
+    max-width: 1220px;
+  }
+
+  .column {
+    flex: 1;
+  }
+
+  ._40 {
+    flex: 4;
+  }
+
+  ._60 {
+    flex: 6;
+  }
+
+  .mobile-padding-x-30 {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .padding-left-40 {
+    padding-left: 40px;
+  }
+  
+  .padding-right-40 {
+    padding-right: 40px;
+  }
+}

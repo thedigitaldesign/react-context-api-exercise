@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 
+// Styles
+import './Layout.css'
+
 export default class Layout extends Component {
   render() {
     return (
       <>
-        <header>
-          This is my header bar
+        <header className="header">
+          Joshua Christensen - UI Engineering Technical Exercise
         </header>
-        <main>
+        <main className="app">
           {this.props.children}
         </main>
       </>

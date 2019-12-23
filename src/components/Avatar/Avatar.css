@@ -1,0 +1,31 @@
+/* Generic */
+
+/* Mobile */
+.avatar-card {
+  padding: 20px 30px;
+}
+
+  .avatar-card .card-photo {
+    width: 118px;
+    height: 118px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .avatar-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .avatar-card span {
+    display: block;
+    text-align: center;
+  }
+
+/* Desktop Override */
+@media screen and (min-width: 700px) {
+  .avatar-card .card-photo {
+    width: 148px;
+    height: 148px;
+  }
+}

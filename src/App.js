@@ -1,7 +1,4 @@
-import React, { Component, createContext } from 'react'
-
-// Styles
-import './App.css'
+import React, { Component } from 'react'
 
 // Packages
 import { BrowserRouter } from 'react-router-dom'
@@ -10,41 +7,19 @@ import { BrowserRouter } from 'react-router-dom'
 import AppRoutes from './utils/Routes/Routes'
 import Layout from './views/_Shared/Layout'
 
-const Context = createContext()
-
-class GlobalProvider extends Component {
-  state = {
-    id: '',
-    name: '',
-    email: '',
-    position: '',
-    photo: '',
-  }
-
-  render() {
-    const provider = {
-      state: this.state,
-      handleAvatarClick: () => this.setState({}),
-    }
-
-    return (
-      <Context.Provider value={this.state}>
-        {this.props.children}
-      </Context.Provider>
-    )
-  }
-}
+// Providers
+import GlobalContext from './context/GlobalContext'
 
 export default class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <GlobalProvider>
+      <GlobalContext>
+        <BrowserRouter>
           <Layout>
             <AppRoutes />
           </Layout>
-        </GlobalProvider>
-      </BrowserRouter>
+        </BrowserRouter>
+      </GlobalContext>
     )
   }
 }
