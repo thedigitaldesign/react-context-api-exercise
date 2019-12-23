@@ -20,6 +20,7 @@
   .avatar-card span {
     display: block;
     text-align: center;
+    margin-top: 5px;
   }
 
 /* Desktop Override */
